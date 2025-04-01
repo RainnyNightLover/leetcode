@@ -1,23 +1,15 @@
-package _01_10;
-
+package one_ten;
 import java.util.HashMap;
 
 public class _01TowSum {
-
 	public int[] towSum(int[] nums, int target) {
-		
 		int[] indexs = new int[2];
-		
 		HashMap hashmap = new HashMap();
-	
 		for(int i = 0;i<nums.length;i++) {
 			hashmap.put(nums[i], i);
 		}
-		
 		for(int j = 0;j<nums.length;j++) {
-			
 			int rest = target - nums[j];
-			
 			if(hashmap.containsKey(rest)&&rest!=nums[j]) {
 				//cat not be the same number
 				indexs[0]=j;
@@ -25,9 +17,7 @@ public class _01TowSum {
 //				must return for in case of the second result
 				break;
 			}
-			
 		}
-		
 		return indexs;
 	}
 	
